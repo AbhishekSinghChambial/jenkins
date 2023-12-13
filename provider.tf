@@ -1,18 +1,21 @@
 terraform {
- required_providers {
-   aws = {
-     source  = "hashicorp/aws"
-     version = "~> 4.16"
-   }
- }
- backend "s3" {      #here state file send in s3 bucket
-   bucket = "newavibucket"  #Bucket name
-   key    = "terraform.tfstate"  #File Name
-   region = "us-east-1"
+  required_version = ">= 0.14.11"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
     }
- required_version = ">= 0.14.11"
+  }
+
+  backend "s3" {
+    bucket = "newavibucket"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
 }
+
+
 provider "aws" {
-  region  = "us-east-1"
-  profile = "default"
+  region = "us-east-1"  # Change this to your desired region
 }
