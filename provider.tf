@@ -10,7 +10,7 @@ terraform {
    key    = "terraform.tfstate"  #File Name
    region = "us-east-1"
     }
- required_version = ">= 1.2.0"
+ required_version = ">= 0.14.11"
 }
 provider "aws" {
   region  = "us-east-1"
